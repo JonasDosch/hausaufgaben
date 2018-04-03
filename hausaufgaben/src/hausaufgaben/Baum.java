@@ -1,7 +1,8 @@
 package hausaufgaben;
 
-public class Test {
+public class Baum {
 	public static void main(String []args) {
 System.out.print("Dei Mudder");
+
 }
 }
