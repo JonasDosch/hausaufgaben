@@ -1,7 +1,7 @@
 package hausaufgaben;
-import static jsTools.Input.*;
+//import static jsTools.Input.*;
 
-public class Baum {
+public class Bruch {
 	
 	int zaehler;
 	int nenner;
@@ -12,8 +12,11 @@ public class Baum {
 	
 	public static void main(String []args) {
 		
-		Baum a =  new Baum();
-		a.SetBaum(4,16);
+		Bruch a =  new Bruch();
+		a.SetBruch(4,16);
+		
+		Bruch b = new Bruch();
+		b.SetBruch(2, 4);
 		
 		
 		System.out.println(a.groessterTeiler(a.zaehler,a.nenner));
@@ -23,9 +26,10 @@ public class Baum {
 		System.out.println(a.mul(3));
 		
 		System.out.println(a.mul(a));
-
-}
-	public void SetBaum(int zaehler, int nenner) {
+		
+		System.out.println(a.add(b));
+	}
+	public void SetBruch(int zaehler, int nenner) {
 		this.zaehler = zaehler;
 		this.nenner = nenner;
 	}
@@ -40,10 +44,10 @@ public class Baum {
 		}
 	}
 	
-	public Baum kuerzen() {
+	public Bruch kuerzen() {
 		int neuerBruch = this.groessterTeiler(this.zaehler, this.nenner);
 		
-		Baum kurz = new Baum();
+		Bruch kurz = new Bruch();
 		kurz.zaehler = zaehler/neuerBruch;
 		kurz.nenner = nenner/neuerBruch;
 		
@@ -51,28 +55,31 @@ public class Baum {
 		
 		
 	}
-	public Baum mul(int z) {
+	public Bruch mul(int z) {
 		
-		Baum mul = new Baum();
+		Bruch mul = new Bruch();
 		mul.zaehler= zaehler *z;
 		mul.nenner= nenner;
 		return mul;
 	}
 	
-	public Baum mul(Baum baum) {
-		Baum mul2 = new Baum(this.zaehler*baum.zaehler, this.nenner*baum.nenner);
+	public Bruch mul(Bruch bruch) {
+		Bruch mul2 = new Bruch();
+		mul2.zaehler=this.zaehler*bruch.zaehler;
+		mul2.nenner=this.nenner*bruch.nenner;
+		
 		return mul2.kuerzen();
 		
 		
 		
 	}
 	
-	public Baum add(Baum baum) {
-		Baum add = new Baum();
-		this.zaehler = this.zaehler * baum.nenner;
-		baum.zaehler = baum.zaehler * this.nenner;
-		add.nenner = this.nenner * baum.nenner;		
-		add.nenner = this.zaehler + baum.zaehler;
+	public Bruch add(Bruch bruch) {
+		Bruch add = new Bruch();
+		this.zaehler = this.zaehler * bruch.nenner;
+		bruch.zaehler = bruch.zaehler * this.nenner;
+		add.nenner = this.nenner * bruch.nenner;		
+		add.zaehler = this.zaehler + bruch.zaehler;
 		
 		return add.kuerzen();
 		
