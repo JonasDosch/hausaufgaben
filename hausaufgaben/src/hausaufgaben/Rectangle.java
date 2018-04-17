@@ -12,7 +12,7 @@ public class Rectangle extends Shape{
 		this.width = width;
 	}
 			
-
+1
 	
 
 	double getWidth() {
