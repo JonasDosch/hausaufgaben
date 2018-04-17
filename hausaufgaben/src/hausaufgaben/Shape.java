@@ -8,7 +8,7 @@ public class Shape {
 	public Shape(double x2, double y2) {
 		x=x2;
 		y=y2;
-		1
+		
 	}
 	
 
