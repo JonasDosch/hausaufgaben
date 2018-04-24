@@ -8,8 +8,6 @@ public interface InterestBearing {
 		return 0.0;
 	}
 	
-	public static void accrueInterest() {
-		int i = 0;
-	}
+	 	void accrueInterest();
 
 }
