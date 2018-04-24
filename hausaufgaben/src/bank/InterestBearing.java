@@ -4,12 +4,8 @@ public interface InterestBearing {
 	
 	
 	
-	 static double getInterestRate(){
-		return 0.0;
-	}
+	  double getInterestRate();
 	
-	public static void accrueInterest() {
-		int i = 0;
-	}
+	  void accrueInterest();
 
 }

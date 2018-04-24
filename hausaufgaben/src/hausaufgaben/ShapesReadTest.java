@@ -1,6 +1,6 @@
 package hausaufgaben;
-import static jsTools.Input.*;
 import static jsTools.Graph.*;
+import static jsTools.Input.*;
 
 
 
