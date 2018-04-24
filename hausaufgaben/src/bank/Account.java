@@ -35,8 +35,10 @@ public class Account implements Printable{
 		this.balance = this.balance - amount;
 	}
 	
-	 void boolean equals(Object obj){
-		return this.GetId() == obj.GetId();
+	@Override
+	public boolean equals(Object obj){
+		Account account = (Account)obj;
+		return this.GetId() == account.GetId();
 		
 	}
 
