@@ -34,6 +34,11 @@ public class Account implements Printable{
 	void withdraw(int amount) {
 		this.balance = this.balance - amount;
 	}
+	
+	 void boolean equals(Object obj){
+		return this.GetId() == obj.GetId();
+		
+	}
 
 	
 
