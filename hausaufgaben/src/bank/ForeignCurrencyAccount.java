@@ -13,5 +13,8 @@ public class ForeignCurrencyAccount extends Account {
 
 		System.out.println("accountnumer: \t" + "\t" + this.id + "\n" + "depositor: \t" + "\t" + this.depositor + "\n" + "current balance: \t" + (double) (this.balance * currency.conversionRateEuro)/100 + " " +currency );
 
+		
+		
+		
 }
 }
