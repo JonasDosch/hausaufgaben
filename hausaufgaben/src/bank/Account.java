@@ -1,8 +1,6 @@
 package bank;
 
-import java.util.Currency;
-
-public class Account implements Printable{
+public abstract class Account implements Printable, Comparable<Object>{
 	
 	int id;
 	String depositor;
@@ -41,6 +39,8 @@ public class Account implements Printable{
 		return this.GetId() == account.GetId();
 		
 	}
+	
+
 
 	
 
@@ -50,4 +50,23 @@ public class Account implements Printable{
 		System.out.println("accountnumer: \t" + "\t" + this.id + "\n" + "depositor: \t" + "\t" + this.depositor + "\n" + "current balance: \t" + this.balance + " EUR");
 	
 }
+
+	@Override
+	public int compareTo(Object obj) {
+		if (obj instanceof Account) {
+			Account other = (Account) obj;
+			if (this.GetId() < other.GetId()) {
+				return -1;
+			} else if (this.GetId() > other.GetId()) {
+				return 1;
+			} else {
+				return 0;
+			}
+		} else {
+			System.out.println("Fehler: ungültiger Vergleich");
+			return -1;
+		}
+	}
+
+
 }
