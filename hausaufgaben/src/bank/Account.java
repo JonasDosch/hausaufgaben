@@ -1,6 +1,6 @@
 package bank;
 
-public abstract class Account implements Printable, Comparable<Object>{
+public abstract class Account implements Printable, Comparable{
 	
 	int id;
 	String depositor;
@@ -50,6 +50,8 @@ public abstract class Account implements Printable, Comparable<Object>{
 		System.out.println("accountnumer: \t" + "\t" + this.id + "\n" + "depositor: \t" + "\t" + this.depositor + "\n" + "current balance: \t" + this.balance + " EUR");
 	
 }
+	
+
 
 	@Override
 	public int compareTo(Object obj) {

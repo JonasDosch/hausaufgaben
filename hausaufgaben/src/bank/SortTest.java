@@ -21,15 +21,12 @@ public class SortTest extends Account implements Printable{
 		
 		Arrays.sort(a);
 		for(int i = 0; i <= a.length; i++) {
+			try {
 			a[i].print();
+			}catch(Exception ex) {}
 		}
 		}
 	
-	public void print() {
-
-		System.out.println("accountnumer: \t" + "\t" + this.id + "\n" + "depositor: \t" + "\t" + this.depositor + "\n" + "current balance: \t" + this.balance + " EUR");
-	
-}
 
 	@Override 
 	public int compareTo(Object obj) {
@@ -51,21 +48,6 @@ public class SortTest extends Account implements Printable{
 
 
 }
-
-
-	@Override
-	public int compareTo(Object a, Object b) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-
-
-
-
-
-
 
 
 
