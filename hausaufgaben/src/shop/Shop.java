@@ -71,7 +71,7 @@ public class Shop implements Storage, Business {
 	@Override
 	public Product get(String productName) {
 		for(int i = 0; i < storage.length; i++ ) {
-			if(storage[i].getName() == productName) {
+			if(storage[i].getName().equals(productName)) {
 				return  (Product) storage[i];
 			}
 		}
@@ -90,6 +90,7 @@ public class Shop implements Storage, Business {
 			}
 			}
 		}
+		//System.out.print(count);	
 		return count;
 	}
 
