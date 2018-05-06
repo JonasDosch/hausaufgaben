@@ -1,5 +1,7 @@
 package shop;
 
+import java.io.IOException;
+
 public class Shop implements Storage, Business {
 	
 	private Product [] storage;
@@ -24,16 +26,25 @@ public class Shop implements Storage, Business {
 	}
 
 	@Override
-	public void sell(int quantity, String productName) {
+	public void sell(int quantity, String productName) throws OutOfStockException{
 
+		boolean sold = false;
+		
 		for(int i = 0 ; i < quantity; i++) {
 			Product x = get(productName);
 			if(x != null) {
 				revenue = revenue + x.getPrice();
 				x = null;
+				sold=true;
+			}
+		}
+			
+			if(!sold) {
+				throw new OutOfStockException(
+						"Ist bereits verkauft!");
 			}
 			
-			}
+			
 		
 	}
 
@@ -45,25 +56,59 @@ public class Shop implements Storage, Business {
 	}
 
 	@Override
-	public void add(Product item) {
+	public void add(Product item) throws OutOfStorageException {
+		
+	boolean isInStorage = false;
+	
 		for(int i = 0; i < storage.length; i++ ) {
-			try {
+	
 			if(storage[i] == null) {
 				storage[i] = item;
+				isInStorage = true;
 				return;
 			}
 							
-			}catch(NullPointerException ex) {}
+			
+		}
+		
+		if(!isInStorage) {
+			throw new OutOfStorageException(
+					"Kein Platz mehr!");
 		}
 		
 	}
 
 	@Override
-	public void remove(Product item) {
+	public void remove(Product item) throws StorageException{
+		boolean isIn = false;
 		for(int i = 0; i < storage.length; i++ ) {
 			if(storage[i] == item) {
 				storage[i] = null;
+				isIn = true;
 			}
+		}
+			
+			if(!isIn) {
+				throw new StorageException(
+						"Ist nicht mehr drin!");
+			}
+		
+		
+	}
+	
+	public void removel(Product item) throws IOException {
+		for(int i = 0; i < storage.length; i++ ) {
+			if(((Storage) storage[i]).get(storage[i].getName()) == null ) {
+				throw new IOException(
+						"Produkt nicht im Lager!");
+						
+			}
+			
+			if(storage[i] == item) {
+				storage[i] = null;
+			}
+			
+		
 		}
 		
 	}

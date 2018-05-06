@@ -2,9 +2,9 @@ package shop;
 
 public interface Storage {
 	
-	void add(Product item);
+	void add(Product item) throws OutOfStorageException;
 	
-	 void remove(Product item);
+	 void remove(Product item) throws StorageException;
 	 
 	 Product get(String productName);
 	 
