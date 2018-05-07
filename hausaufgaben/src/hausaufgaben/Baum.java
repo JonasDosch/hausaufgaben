@@ -1,6 +1,11 @@
 package hausaufgaben;
 import static jsTools.Input.*;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import addresses.mehr;
+
 public class Baum {
 	
 	int zaehler;
@@ -11,6 +16,18 @@ public class Baum {
 	}
 	
 	public static void main(String []args) {
+		
+		String s = "Schulstraﬂe 2";
+		
+		Pattern pattern = Pattern.compile("(\\w+)\\s(\\d+)"); 
+				Matcher matcher = pattern.matcher(s);
+					 if(matcher.find()){
+					    System.out.println(matcher.group(1)); 
+					    System.out.println(matcher.group(2)); 
+					    }
+			
+		System.out.println(s);
+		
 		
 		Baum a =  new Baum();
 		a.SetBaum(4,16);
@@ -25,6 +42,10 @@ public class Baum {
 		System.out.println(a.mul(a));
 
 }
+	
+	
+			 
+			 
 	public void SetBaum(int zaehler, int nenner) {
 		this.zaehler = zaehler;
 		this.nenner = nenner;
