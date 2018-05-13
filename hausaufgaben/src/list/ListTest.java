@@ -3,18 +3,17 @@ package list;
 public class ListTest{
 
 
-	public static <E> void main(String[] args) {
+	public static void main(String[] args) {
 		
-		E[] myArray = (E[]) new String[4];
+		ArrayList<String> myArray = new ArrayList<>(4);
+				
+		myArray.add("Fick Dich");
+		myArray.set(1, "Hurensohn");
+		myArray.add("Penis");
 		
-		
-		myArray[0] = (E) "Hallo";
-		myArray[1] = (E) "Pimmel";
-		myArray[2] = (E) "Dödel";
-		
-		
-		System.out.println(myArray[3]);
-		
+		System.out.println(myArray.size());
+		System.out.println(myArray.get(1));
+	
 		
 	}
 
