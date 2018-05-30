@@ -7,8 +7,9 @@ public class ArrayList<E> implements List<E>{
 	private int nextIndex = 0;
 
 	
+	@SuppressWarnings("unchecked")
 	public ArrayList(int capacity){
-	myArray = (E[]) new Object[capacity];
+	myArray =   (E[]) new Object[capacity];
 			}
 	
 	@Override
@@ -21,7 +22,7 @@ public class ArrayList<E> implements List<E>{
 
 	@Override
 	public E get(int index) {
-	return  myArray[index];
+	return   myArray[index];
 	
 	}
 	
