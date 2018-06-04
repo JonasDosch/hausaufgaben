@@ -46,26 +46,25 @@ public class CompanyTest {
     	}
     	
     	 allEmployees.sort((emp1, emp2) -> {
-             int lastNameComparison = emp1.getLastName().compareTo(emp2.getLastName());
-             if (lastNameComparison != 0) {
-                 return lastNameComparison;
+             int i = emp1.getLastName().compareTo(emp2.getLastName());
+             if (i != 0) {
+                 return i;
              } else {
                  return emp1.getFirstName().compareTo(emp2.getFirstName());
              }
          });
     	 
     	  try (PrintWriter printWriter = new PrintWriter("employees.csv")) {
+    		  
               for (Employee e : allEmployees) {
             	  printWriter.println(e.getLastName() + ", " + e.getFirstName());
 
               }
           } catch (IOException e) {
-              System.err.println("Error writing employee list: " + e.getMessage());
+              System.out.println("Glückwunsch IDIOT!");
           }
 
 
-
-    	
     	
     }
 
