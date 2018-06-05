@@ -21,7 +21,7 @@ public class GroupStage {
 	
 
     public void readData() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("teams.csv"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Studium\\Jonas\\Programmieren\\Hausaufgaben\\teams.csv"))) {
             String einlesen;
             while ((einlesen = reader.readLine()) != null) {
                 String[] Lesen = einlesen.split(",");
@@ -33,7 +33,7 @@ public class GroupStage {
         } catch (IOException e) {
             System.err.println("Geht nischt!");
         }
-        try (BufferedReader Matches = new BufferedReader(new FileReader("matches.csv"))) {
+        try (BufferedReader Matches = new BufferedReader(new FileReader("C:\\Studium\\Jonas\\Programmieren\\Hausaufgaben\\matches.csv"))) {
             String einlesen;
             while ((einlesen = Matches.readLine()) != null) {
                 String[] Lesen = einlesen.split(",");
