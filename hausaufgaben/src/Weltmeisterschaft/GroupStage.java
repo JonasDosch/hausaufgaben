@@ -18,6 +18,8 @@ public class GroupStage {
 		matches = new ArrayList<Match>();
 	}
 	
+	
+
     public void readData() {
         try (BufferedReader reader = new BufferedReader(new FileReader("teams.csv"))) {
             String einlesen;
